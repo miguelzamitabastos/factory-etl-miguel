@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Simulator",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/simulator.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Processor",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/processor.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Test - build_pipeline",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "unittest",
+            "args": ["tests.test_stream.TestBuildPipeline", "-v"],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Test - mapping",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "unittest",
+            "args": ["tests.test_stream.TestMappingFunctions", "-v"],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Test - All Tests",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "unittest",
+            "args": ["discover", "-s", "tests", "-p", "test_*.py", "-v"],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
