@@ -34,3 +34,16 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/${{ github.repository }}:latest
+
+      # Step to run unit tests 
+      - name: Install test dependencies
+        run: |
+          pip install rx
+
+      - name: Run tests
+        run: |
+          echo "Running tests..."
+          python -m unittest discover -s tests -p "test_*.py"
+          echo "Tests completed."
+
+
