@@ -66,6 +66,15 @@ services:
     depends_on:
       - elasticsearch
 
+  processor:
+    image: processor-test 
+    env_file:
+     - .env
+    container_name: factory-processor
+    depends_on:
+     - kafka
+     - elasticsearch
+
 volumes:
   kafka_data:
   es_data:
